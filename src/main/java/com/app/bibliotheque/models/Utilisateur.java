@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Utilisateur {
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -46,6 +46,16 @@ public class Utilisateur {
 
     public void setNumeroTelephone(String numeroTelephone) {
         this.numeroTelephone = numeroTelephone;
+    }
+
+    public String getMotDePasse()
+    {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse)
+    {
+        this.motDePasse = motDePasse;
     }
 
     public Long getId() {
