@@ -3,17 +3,17 @@ package com.app.bibliotheque.services;
 import java.util.List;
 import java.util.Optional;
 
-import javax.management.RuntimeErrorException;
+// import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+// import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.app.bibliotheque.models.Utilisateur;
 import com.app.bibliotheque.repositories.UtilisateurRepository;
 
-import ch.qos.logback.classic.pattern.Util;
+// import ch.qos.logback.classic.pattern.Util;
 
 @Service
 public class UtilisateurService {
