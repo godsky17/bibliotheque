@@ -54,7 +54,7 @@ public class LivreController {
     @GetMapping("/ajouter")
     public String showAddLivreForm(Model model) {
         model.addAttribute("livre", new Livre());
-        return "ajouter-livre";  // Retourne la vue 'ajouter-livre.html'
+        return "dashboard/ajouter-livre";  // Retourne la vue 'ajouter-livre.html'
     }
 
     // Ajoute un nouveau livre
