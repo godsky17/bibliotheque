@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form action="#" method="POST" class="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Rôle</label>
+                <select id="role" name="role" required>
+                    <option value="utilisateur">Utilisateur</option>
+                    <option value="bibliothecaire">Bibliothécaire</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Se connecter</button>
+        </form>
+    </div>
+
+</body>
+</html>
