@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="#">Bibliothèque</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/bibliotheque">Livres</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="/login">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section des filtres -->
+    <section class="filter-section">
+        <h2>Filtrer les livres</h2>
+        <form class="filter-form">
+            <select name="genre" id="genre" class="filter-input">
+                <option value="">Tous les genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-fiction</option>
+                <option value="science">Science</option>
+                <option value="history">Histoire</option>
+                <!-- Ajoutez d'autres genres selon besoin -->
+            </select>
+            <input type="text" placeholder="Rechercher par titre ou auteur" class="filter-input">
+            <button type="submit" class="btn-filter">Appliquer les filtres</button>
+        </form>
+    </section>
+
+    <!-- Section des livres -->
+    <section class="books-section">
+        <div class="book-cards-container">
+            <!-- Carte de livre (exemple) -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="https://via.placeholder.com/200x300?text=Image+du+livre" alt="Image du livre">
+                </div>
+                <h3 class="book-title">Le Seigneur des Anneaux</h3>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-date">1954</p>
+                <p class="book-genre">Fantasy</p>
+                <div class="card-buttons">
+                    <button class="btn-more">Voir plus</button>
+                    <button class="btn-borrow">Emprunter</button>
+                </div>
+            </div>
+            <!-- Ajouter d'autres cartes de livre ici -->
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn">Précédent</button>
+            <button class="page-btn">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">Suivant</button>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; 2025 Bibliothèque en ligne. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

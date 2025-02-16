@@ -1,0 +1,23 @@
+{
+  "name": "bibliotheque",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godsky17/bibliotheque.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godsky17/bibliotheque/issues"
+  },
+  "homepage": "https://github.com/godsky17/bibliotheque#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.0.6"
+  }
+}
