@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Books Lover - add livre</title>
+    <title>Book Lover - Ajouter utilisateur</title>
 
     <!-- Custom fonts for this template -->
     <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-book"></i>
                 </div>
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item ">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -60,14 +60,14 @@
             </div>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/utilisateurs">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     <span>Utilisateurs</span></a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item">
+                <a class="nav-link" href="/livres">
                     <i class="fa fa-book" aria-hidden="true"></i>
                     <span>Livres</span></a>
             </li>
@@ -311,29 +311,29 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Livre</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Ajouter utilisateur</h1>
                     
                     <div class="">
                         <div class="row justify-content-center">
                           <div class="col-lg">
-                            <form th:action="@{/livres/ajouter}" th:method="post">
+                            <form th:action="@{/utilisateurs/ajouter{id}(id=${utilisateur.id})}" th:method="post">
                               <div class="row g-3">
                                 <div class="col-md-6">
-                                  <label for="titre_id" class="form-label">Titre</label>
-                                  <input type="text" class="form-control" id="titre_id" name="titre" th:value="${livre.titre}" required>
+                                  <label for="nom_id" class="form-label">Nom</label>
+                                  <input type="text" class="form-control" id="nom_id" name="nom" th:value="${utilisateur.nom}" required>
                                 </div>
                                 <div class="col-md-6">
-                                  <label for="auteur" class="form-label">Auteur</label>
-                                  <input type="text" class="form-control" id="auteur" name="auteur" th:value="${livre.auteur}" required>
+                                  <label for="email" class="form-label">Email</label>
+                                  <input type="email" class="form-control" id="email" name="email" th:value="${utilisateur.email}" required>
                                 </div>
                                 <div class="col-md-6 mt-3">
-                                  <label for="genre" class="form-label">Genre</label>
-                                  <input type="text" class="form-control" id="genre" name="genre" th:value="${livre.genre}" required>
+                                  <label for="numeroTelephone" class="form-label">Numero de telephone</label>
+                                  <input type="text" class="form-control" id="numeroTelephone" name="numeroTelephone" th:value="${utilisateur.numeroTelephone}" required>
                                 </div>
                                 <div class="col-md-6 mt-3">
-                                  <label for="datePublication" class="form-label">Date publication</label>
-                                  <input type="date" class="form-control" id="datePublication" name="datePublication" th:value="${livre.datePublication} ? null : ${livre.datePublication}">
-                                </div>
+                                    <label for="motDePasse" class="form-label">Mot de passe par defaut</label>
+                                    <input type="password" class="form-control" id="motDePasse" name="motDePasse"  required>
+                                  </div>
 
                                 <div class="col-12 mt-3">
                                   <div class="row">
