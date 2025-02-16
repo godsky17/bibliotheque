@@ -9,19 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Book Lover - Ajouter utilisateur</title>
+    <title>Book Lover - Listes des emprunts</title>
 
     <!-- Custom fonts for this template -->
-    <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="./assets/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="./assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -60,8 +60,8 @@
             </div>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/utilisateurs">
+            <li class="nav-item">
+                <a class="nav-link" href="/emprunts">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     <span>Utilisateurs</span></a>
             </li>
@@ -72,7 +72,7 @@
                     <span>Livres</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/emprunts">
                     <i class="fa fa-spinner" aria-hidden="true"></i>
                     <span>Empunts</span></a>
@@ -219,7 +219,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../assets/img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="./assets/img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -231,7 +231,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../assets/img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="./assets/img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -243,7 +243,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../assets/img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="./assets/img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -277,7 +277,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="../../assets/img/undraw_profile.svg">
+                                    src="./assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -311,43 +311,50 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Ajouter utilisateur</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Emprunts</h1>
                     
-                    <div class="">
-                        <div class="row justify-content-center">
-                          <div class="col-lg">
-                            <form th:action="@{/utilisateurs/ajouter{id}(id=${utilisateur.id})}" th:method="post">
-                              <div class="row g-3">
-                                <div class="col-md-6">
-                                  <label for="nom_id" class="form-label">Nom</label>
-                                  <input type="text" class="form-control" id="nom_id" name="nom" th:value="${utilisateur.nom}" required>
-                                </div>
-                                <div class="col-md-6">
-                                  <label for="email" class="form-label">Email</label>
-                                  <input type="email" class="form-control" id="email" name="email" th:value="${utilisateur.email}" required>
-                                </div>
-                                <div class="col-md-6 mt-3">
-                                  <label for="numeroTelephone" class="form-label">Numero de telephone</label>
-                                  <input type="text" class="form-control" id="numeroTelephone" name="numeroTelephone" th:value="${utilisateur.numeroTelephone}" required>
-                                </div>
-                                <div class="col-md-6 mt-3">
-                                    <label for="motDePasse" class="form-label">Mot de passe par defaut</label>
-                                    <input type="password" class="form-control" id="motDePasse" name="motDePasse"  required>
-                                  </div>
-
-                                <div class="col-12 mt-3">
-                                  <div class="row">
-                                    <div class="col-md">
-                                      <button  type="submit" class="btn btn-success w-100 fw-bold" >Send</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des emprunts</h6>
                         </div>
-                      </div>
-                    
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Utilisateur</th>
+                                            <th>Livre</th>
+                                            <th>Date emprunt</th>
+                                            <th>Date retour</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Utilisateur</th>
+                                            <th>Livre</th>
+                                            <th>Date emprunt</th>
+                                            <th>Date retour</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <div th:each="emprunt : ${emprunts}">
+                                            <tr>
+                                                <td  th:text="${emprunt.utilisateur.nom}"></td>
+                                                <td  th:text="${emprunt.livre.titre}"></td>
+                                                <td  th:text="${emprunt.dateEmprunt}"></td>
+                                                <td  th:text="${emprunt.dateRetour}"></td>
+                                                <td  th:text="${emprunt.status}"></td>      
+                                            </tr>
+                                        </div>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -397,20 +404,45 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../assets/js/sb-admin-2.min.js"></script>
+    <script src="./assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="./assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="./assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../assets/js/demo/datatables-demo.js"></script>
+    <script src="./assets/js/demo/datatables-demo.js"></script>
 
 
-    
+    <script>
+        function deleteLivre(button, utilisateurId) {
+            event.preventDefault(); // Empêche le rechargement de la Page
+            const id = button.previousElementSibling.value
+            console.log(id)
+            if (confirm("Voulez-vous vraiment supprimer ce emprunt ?")) {
+                fetch(`/emprunts/supprimer/${id}`, {
+                    method: "GET"
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("emprunt supprimé avec succès !");
+                        location.reload(); // Recharge la page après suppression
+                    } else {
+                        console.log(response)
+                        alert("Erreur lors de la suppression du emprunt.");
+                    }
+                })
+                .catch(error => console.error("Erreur :", error));
+            }
+        }
+    </script>
 </body>
 
 </html>

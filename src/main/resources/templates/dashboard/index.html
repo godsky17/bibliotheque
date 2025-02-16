@@ -70,7 +70,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/emprunts">
                     <i class="fa fa-spinner" aria-hidden="true"></i>
                     <span>Empunts</span></a>
             </li>
@@ -163,7 +163,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/emprunts">
                     <i class="fa fa-spinner" aria-hidden="true"></i>
                     <span>Empunts</span></a>
             </li>
@@ -207,7 +207,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Nombre total de livres</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1582</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${totalLivres}"></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-book fa-2x text-gray-300" aria-hidden="true"></i>
@@ -225,7 +225,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Nombre total d’utilisateurs</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${totalUtilisateurs}"></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-user fa-2x text-gray-300" aria-hidden="true"></i>
@@ -245,7 +245,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" th:text="${livresEmpruntes}"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,7 +265,9 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Retours en attente</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${retoursEnAttente}">
+                                                <p></p>
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-spinner fa-2x text-gray-300"></i>
