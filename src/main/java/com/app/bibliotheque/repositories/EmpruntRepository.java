@@ -9,4 +9,5 @@ import com.app.bibliotheque.models.Emprunt;
 public interface EmpruntRepository extends JpaRepository<Emprunt, Long> {
     List<Emprunt> findByUtilisateurId(Long utilisateurId);
     List<Emprunt> findByLivreId(Long livreId);
+    long countByStatus(boolean status);
 }

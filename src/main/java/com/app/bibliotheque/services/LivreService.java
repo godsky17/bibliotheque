@@ -52,5 +52,9 @@ public class LivreService {
         return livreRepository.save(livre);
     }
 
+    public long countLivres() {
+        return livreRepository.count();
+    }
+
 }
 

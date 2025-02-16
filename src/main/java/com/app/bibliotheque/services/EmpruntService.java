@@ -75,4 +75,13 @@ public class EmpruntService {
     public void supprimerEmprunt(Long id) {
         empruntRepository.deleteById(id);
     }
+
+    public long countLivresEmpruntes() {
+        return empruntRepository.countByStatus(true);
+    }
+
+    
+    public long countRetoursEnAttente() {
+        return empruntRepository.countByStatus(false);
+    }
 }
