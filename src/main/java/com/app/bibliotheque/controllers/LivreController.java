@@ -78,17 +78,17 @@ public class LivreController {
         return "redirect:/livres";  // Redirige vers la liste des livres après suppression
     }
 
-    // Gère l'emprunt d'un livre
-    @PostMapping("/emprunter/{id}")
-    public String emprunterLivre(@PathVariable Long id) {
-        livreService.emprunter(id);
-        return "redirect:/livres";  // Redirige vers la liste des livres après emprunt
-    }
+    // // Gère l'emprunt d'un livre
+    // @PostMapping("/emprunter/{id}")
+    // public String emprunterLivre(@PathVariable Long id) {
+    //     livreService.emprunter(id);
+    //     return "redirect:/livres";  // Redirige vers la liste des livres après emprunt
+    // }
 
-    // Gère le retour d'un livre
-    @PostMapping("/rendre/{id}")
-    public String rendreLivre(@PathVariable Long id) {
-        livreService.rendre(id);
-        return "redirect:/livres";  // Redirige vers la liste des livres après retour
-    }
+    // // Gère le retour d'un livre
+    // @PostMapping("/rendre/{id}")
+    // public String rendreLivre(@PathVariable Long id) {
+    //     livreService.rendre(id);
+    //     return "redirect:/livres";  // Redirige vers la liste des livres après retour
+    // }
 }
